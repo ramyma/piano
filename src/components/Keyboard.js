@@ -9,11 +9,17 @@ export const isRaised = (key) => {
   return pattern.test(key);
 };
 
-function Keyboard() {
+function Keyboard({ onKeyPlayed }) {
   return (
     <section id="keyboard">
       {keys.map((k) => (
-        <Key key={k} note={k} showNote raised={isRaised(k)} />
+        <Key
+          key={k}
+          note={k}
+          showNote
+          raised={isRaised(k)}
+          onMouseDown={() => onKeyPlayed(k)}
+        />
       ))}
     </section>
   );
