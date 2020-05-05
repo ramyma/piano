@@ -24,8 +24,8 @@ A TDD approach was taken to insure every new piece of logic/rendering is tested 
 
 ## Future Improvements
 
-- Use CSS in JS library like Emotion or Styled Components
-- Use state management library like Redux
+- Use a CSS in JS library like Emotion or Styled Components
+- Use a state management library like Redux
 
 **Note:** Over-engineering was avoided intentionally by not using libraries that could be easily replaced by simpler methods.
 
