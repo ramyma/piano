@@ -4,20 +4,15 @@ import Keyboard, { isRaised } from '../Keyboard';
 
 describe('Test keyboard', () => {
   it('should render all note keys', () => {
-    const { getByTestId } = render(<Keyboard />);
+    const { getByText } = render(<Keyboard />);
 
-    expect(getByTestId('C')).toBeInTheDocument();
-    expect(getByTestId('Db')).toBeInTheDocument();
-    expect(getByTestId('D')).toBeInTheDocument();
-    expect(getByTestId('Eb')).toBeInTheDocument();
-    expect(getByTestId('E')).toBeInTheDocument();
-    expect(getByTestId('F')).toBeInTheDocument();
-    expect(getByTestId('Gb')).toBeInTheDocument();
-    expect(getByTestId('G')).toBeInTheDocument();
-    expect(getByTestId('Ab')).toBeInTheDocument();
-    expect(getByTestId('A')).toBeInTheDocument();
-    expect(getByTestId('Bb')).toBeInTheDocument();
-    expect(getByTestId('B')).toBeInTheDocument();
+    expect(getByText(/^C$/)).toBeInTheDocument();
+    expect(getByText(/^D$/)).toBeInTheDocument();
+    expect(getByText(/^E$/)).toBeInTheDocument();
+    expect(getByText(/^F$/)).toBeInTheDocument();
+    expect(getByText(/^G$/)).toBeInTheDocument();
+    expect(getByText(/^A$/)).toBeInTheDocument();
+    expect(getByText(/^B$/)).toBeInTheDocument();
   });
 });
 
