@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Key from './Key';
+import styles from './Keyboard.module.scss';
 
 const keys = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
 
@@ -9,22 +10,26 @@ export const isRaised = (key) => {
   return pattern.test(key);
 };
 
-function Keyboard({ onKeyPlayed }) {
+function Keyboard({ activeKey, onKeyPlayed }) {
   return (
-    <section id="keyboard">
-      {keys.map((k) => (
+    <section className={styles.keyboard}>
+      {keys.map((note) => (
         <Key
-          key={k}
-          note={k}
+          key={note}
+          note={note}
           showNote
-          raised={isRaised(k)}
-          onMouseDown={() => onKeyPlayed(k)}
+          isRaised={isRaised(note)}
+          onClick={() => onKeyPlayed(note)}
+          isActive={activeKey === note}
         />
       ))}
     </section>
   );
 }
 
-Keyboard.propTypes = {};
+Keyboard.propTypes = {
+  activeKey: PropTypes.string,
+  onKeyPlayed: PropTypes.func,
+};
 
 export default Keyboard;

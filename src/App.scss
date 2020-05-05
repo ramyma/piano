@@ -1,0 +1,14 @@
+main {
+  margin: 0 auto;
+  max-width: calc(1200px - 32px);
+  padding: 16px;
+}
+
+button {
+  padding: 12px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

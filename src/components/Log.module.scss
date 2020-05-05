@@ -1,0 +1,32 @@
+.container {
+  margin-top: 24px;
+
+}
+
+.log {
+  border: 1px black solid;
+  border-radius: 4px;
+  height: 200px;
+
+
+  overflow-y: auto;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px solid black;
+  }
+
+  li:last-child {
+    border: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
