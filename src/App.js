@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useRef, useEffect } from 'react';
+import React, { useEffect, useReducer, useRef, useState } from 'react';
 import './App.scss';
 import Keyboard from './components/Keyboard';
 import Log from './components/Log';
@@ -66,9 +66,9 @@ function App() {
   return (
     <main>
       <Keyboard activeKey={activeKey} onKeyPlayed={handleKeyPlayed} />
+      {/* To showcase multiple keyboards working in sync*/}
+      <Keyboard activeKey={activeKey} onKeyPlayed={handleKeyPlayed} />
 
-      {/* TODO: handle tests with multiple usages */}
-      {/* <Keyboard activeKey={activeKey} onKeyPlayed={handleKeyPlayed} /> */}
       <Log logEntries={logEntries} clearLog={handleClearLog} />
 
       <Player playNotes={handlePlayNotes} />

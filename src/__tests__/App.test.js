@@ -33,21 +33,37 @@ describe('Test App', () => {
   });
 
   it('should add played note to log', () => {
-    const { getByText, getByLabelText } = render(<App />);
+    const { getAllByText, getByLabelText } = render(<App />);
 
-    // Play the C note
-    const cKey = getByText(/^C$/);
+    // Play the C note on first keyboard.
+    const cKey = getAllByText(/^C$/)[0];
     user.click(cKey);
 
     const logElement = getByLabelText(/log/i);
     // Expect the played note to be added to the log entries
     expect(logElement).toHaveTextContent('C');
 
-    const aKey = getByText(/^A$/);
+    const aKey = getAllByText(/^A$/)[0];
     user.click(aKey);
 
+    ////////
+    /// Check for second keyboard (comment out if only 1 keyboard is used)
+    ////////
+
     // Expect the played notes to be added to the log entries
-    expect(logElement).toHaveTextContent('AC');
+    expect(logElement).toHaveTextContent(/^AC$/);
+
+    // Play the C note on second keyboard.
+    const cKey2 = getAllByText(/^G$/)[1];
+    user.click(cKey2);
+
+    const aKey2 = getAllByText(/^E$/)[1];
+    user.click(aKey2);
+
+    // Expect the played notes to be added to the log entries
+    expect(logElement).toHaveTextContent(/^EGAC$/);
+
+    ////////
   });
 
   it('should be accessible', async () => {
