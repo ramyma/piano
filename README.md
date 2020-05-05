@@ -1,3 +1,34 @@
+# React Piano
+
+This project implements a simple piano keyboard with key strokes log and batch playing of notes.
+
+## Development Process
+
+A TDD approach was taken to insure every new piece of logic/rendering is tested incrementally by drafting out the required logic in the tests and make them pass as the features are implemented.
+
+## Components
+
+- App: main app
+- Key: piano key
+- Keyboard: piano keys and related logic
+- Log: display played notes with the latest note on top
+- Player: provides batch notes playing capabilities
+
+## Tools Used
+
+- CRA (Create React App)
+- React
+- Jest
+- testing-library
+- SCSS
+
+## Future Improvements
+
+- Use CSS in JS library like Emotion or Styled Components
+- Use state management library like Redux
+
+**Note:** Over-engineering was avoided intentionally by not using libraries that could be easily replaced by simpler methods.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
