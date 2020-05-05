@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+
+  textarea {
+    height: 100px;
+    width: 300px;
+    margin-right: 12px;
+    border-radius: 4px;
+    resize: none;
+    padding: 12px;
+    font-size: medium;
+  }
+}
