@@ -43,6 +43,7 @@ function App() {
       const note = notesArray[i];
       setActiveKey(note);
       handleKeyPlayed(note);
+
       timeoutRef.current = setTimeout(() => {
         playNotes(notesArray, i + 1);
       }, 1000);
