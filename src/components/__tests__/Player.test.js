@@ -30,7 +30,7 @@ describe('Test Player component', () => {
   });
 
   it('should update textbox value on user typing and submits an array on clicking Play', () => {
-    const playNotesMock = jest.fn((notes) => notes);
+    const playNotesMock = jest.fn();
     const { getByRole, getByText } = render(
       <Player playNotes={playNotesMock} />
     );
