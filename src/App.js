@@ -39,19 +39,16 @@ function App() {
   };
 
   const playNotes = (notesArray, i = 0) => {
-    timeoutRef.current = setTimeout(
-      () => {
-        if (i < notesArray.length) {
-          const note = notesArray[i];
-          setActiveKey(note);
-          handleKeyPlayed(note);
-          playNotes(notesArray, i + 1);
-        } else {
-          setActiveKey();
-        }
-      },
-      i === 0 ? 0 : 1000
-    );
+    if (i < notesArray.length) {
+      const note = notesArray[i];
+      setActiveKey(note);
+      handleKeyPlayed(note);
+      timeoutRef.current = setTimeout(() => {
+        playNotes(notesArray, i + 1);
+      }, 1000);
+    } else {
+      setActiveKey();
+    }
   };
 
   const handlePlayNotes = (notesArray) => {
