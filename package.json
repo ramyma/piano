@@ -41,7 +41,7 @@
     "@types/jest": "^25.2.1",
     "identity-obj-proxy": "^3.0.0",
     "jest-axe": "^3.4.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "ts-jest": "^25.4.0"
   }
 }
